@@ -1,0 +1,161 @@
+
+@import './default.sass'
+
+$avatar-size-lg: 80px
+$avatar-size-sm: 60px
+
+.user-avatar
+   .avatar-wraper
+      border: 2px solid #ebedee
+      border-radius: 4px
+      padding: 2px
+      img
+         border-radius: 4px
+         display: block
+
+
+.comments-system
+   width: 100%
+   padding: 20px 80px
+   box-sizing: border-box
+
+.new-comment
+   .new-comment__title
+      font-size: 30px
+      color: $clr-dark
+
+   .new-comment__body
+      display: flex
+      padding-top: 40px
+      padding-bottom: 10px
+      border-bottom: 2px solid #f2f2f2
+      .user-avatar
+         margin-right: 22px
+         img
+            width: $avatar-size-lg
+            height: $avatar-size-lg
+
+.comments-list
+   padding-top: 40px
+   padding-bottom: 50px
+   > .list-item
+      margin-bottom: 40px
+      &:last-child
+         margin-bottom: 0
+         .comment
+            margin-bottom: 0
+   .comment
+      display: flex
+      margin-bottom: 10px
+      .user-avatar
+         margin-right: 22px
+         img
+            width: $avatar-size-lg
+            height: $avatar-size-lg
+      .comment-body
+         width: 100%
+         padding-top: 2px
+         .comment-content
+            .comment-content__header
+               padding-bottom: 16px
+               .header-cell
+                  margin-right: 10px
+                  svg
+                     margin-right: 4px
+                     font-size: .81em
+               .comment-content__author
+                  color: $clr-dark
+                  font-size: $fs-main
+               .comment-content__publish-time, .comment-content__reply-to
+                  color: $clr-light
+                  font-size: $fs-submain
+            .comment-message
+               font-size: $fs-main
+               color: $clr-dark
+               padding-bottom: 12px
+            .comment-controls
+               .control-btn
+                  margin-right: 10px
+                  padding: 0
+                  color: $clr-light
+                  font-size: $fs-submain
+                  svg
+                     margin-right: 2px
+                     font-size: .81em
+   .comment-reply,
+   .nested-comments
+      padding-left: 110px
+   .nested-comments
+      padding-top: 20px
+      .list-item
+         padding-bottom: 30px
+         .comment
+            margin-bottom: 0
+         &:last-child
+            padding-bottom: 0
+      .user-avatar
+         img
+            width: $avatar-size-sm
+            height: $avatar-size-sm
+
+   .comment-reply
+      margin-top: 20px
+      .comment-reply__head
+         padding-bottom: 14px
+         display: flex
+         justify-content: space-between
+         .reply-to__author, .reply-btn__cancel
+            color: $clr-light
+            font-size: $fs-submain
+            svg
+               margin-right: 2px
+         .reply-btn__cancel
+            padding: 0
+
+
+
+.new-comment-form
+   width: 100%
+   text-align: right
+   .text-input
+      box-sizing: border-box
+      resize: none
+      width: 100%
+      outline: none
+      border: 2px solid #ebedee
+      border-radius: 4px
+      height: 88px
+      padding: 12px 14px
+      font-size: $fs-main
+      font-family: $font-main-reg
+      &:active, &:focus
+         border-color: #b6b6b6
+
+   .new-comment-btn
+      margin-top: 8px
+      width: 140px
+      height: 44px
+      border-radius: 4px
+      background-color: #f1c40f
+      color: $clr-dark
+      font-size: $fs-main
+      font-family: $font-main-med
+
+.load-more-comments
+   margin-top: 20px
+   border-top: 2px solid #f2f2f2
+   position: relative
+   .load-more_button-wrapper
+      position: absolute
+      top: -22px
+      left: 50%
+      transform: translate(-50%, 0)
+      display: inline-block
+      padding: 0 4px
+      background-color: #ffffff
+      .load-more__btn
+         width: 180px
+         height: 40px
+         color: $clr-light
+         font-size: $fs-submain
+         border: 2px solid #f2f2f2

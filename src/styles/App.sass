@@ -1,0 +1,49 @@
+
+@import './reset.sass'
+@import './fonts.sass'
+@import './default.sass'
+
+strong
+   font-family: $font-main-med
+
+.btn 
+   border: none
+   outline: none
+   cursor: pointer
+   &:hover
+      opacity: .7
+   
+
+.app 
+   font-family: $font-main-reg
+   box-sizing: border-box
+   background-color: #f2f2f2
+   .main-container
+      padding-top: 320px
+      padding-bottom: 80px
+      
+      position: relative
+      .top-background
+         position: absolute
+         top: 0
+         left: 0
+         width: 100%
+         height: 400px
+         background: linear-gradient(to bottom, rgba(0,0,0,0) 25%,rgba(0,0,0,0.65) 70%), url('../img/bg.jpg') center center no-repeat
+         background-size: cover
+         // background-position: center center
+         // background-repeat: no-repeat
+         z-index: 0
+      .content-wrapper
+         position: relative
+         width: $content-width
+         margin: 0 auto
+         overflow-x: hidden
+         background-color: #ffffff
+         padding-bottom: 60px
+         box-shadow: 0 5px 15px rgba(0,0,0,.05)
+
+      
+
+
+

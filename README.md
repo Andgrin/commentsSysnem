@@ -1,2 +1,1 @@
-# Simple comments system
-
+# System of comments

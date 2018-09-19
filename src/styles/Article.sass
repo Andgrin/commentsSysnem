@@ -1,0 +1,74 @@
+
+@import './default.sass'
+
+.page-article 
+   width: 100%
+   height: auto
+   // font-family: $font-main-reg
+
+.article-header
+   width: 100%
+   padding: 40px 80px 0
+   box-sizing: border-box
+   .article-title
+      width: 100%
+      position: relative
+      box-sizing: border-box
+      .svg-icon
+         position: absolute
+         top: 2px
+         left: -56px
+         width: 24px
+         height: 24px
+         border: 4px solid #ffd800
+         border-radius: 50%
+         font-size: 16px
+         line-height: 24px
+         color: #ffd800
+         text-align: center
+      
+      h1
+         font-size: 30px
+         font-family: $font-main-sbold
+         line-height: 38px
+         color: $clr-dark
+         border-bottom: 1px solid #f2f2f2
+
+   .article-subtitle
+      color: #b6b6b6
+      font-size: 15px
+      padding-top: 9px
+
+.article-body
+   padding: 12px 80px 10px
+   p
+      font-size: $fs-main
+      line-height: 25px
+      padding-bottom: 25px
+      text-align: justify
+
+   img
+      float: left
+      width: 366px
+      margin-left: -85px
+      margin-right: 20px
+      border: 5px solid #f2f2f2
+
+.article-footer
+   border-top: 2px solid #f2f2f2
+   border-bottom: 2px solid #f2f2f2
+   padding: 20px 2px
+   display: flex
+   color: $clr-light
+   .article-footer__info-item
+      font-size: 15px
+      margin-right: 56px
+      span
+         white-space: nowrap
+         > svg
+            padding-right: 5px
+            font-size: .81em
+         > address
+            display: inline
+
+
