@@ -14,11 +14,17 @@ export const addNewComment = newComment => {
    }
 }
 
-export const addNewSubComment = (newComment, parentId) => {
+export const addNewSubComment = data => {
    return {
       type: CommentsActionType.ADD_NEW_SUB_COMMENT,
-      newComment,
-      parentId
+      data
+   }
+}
+
+export const editComment = data => {
+   return {
+      type: CommentsActionType.EDIT_COMMENT,
+      data
    }
 }
 
@@ -29,10 +35,16 @@ export const deleteComment = id => {
    }
 }
 
-export const checkCanLoadMore = canLoadMore => {
+export const checkCanLoadMore = data => {
    return {
       type: CommentsActionType.CHECK_CAN_LOAD_MORE,
-      canLoadMore
+      data
    }
 }
 
+export const triggerCommentForm = obj => {
+   return {
+      type: CommentsActionType.TRIGGER_COMMENT_FORM,
+      obj
+   }
+}

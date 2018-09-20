@@ -46,10 +46,16 @@ class CommentsSystem extends Component {
    }
 
    checkCanLoadMore(data) {
-      if ( data.length % 5 === 0 ) {
-         this.props.checkCanLoadMore(true);
+      if ( data.length !== 0 && data.length % 5 === 0 ) {
+         this.props.checkCanLoadMore({
+            canLoadMore: true,
+            numb: this.props.lastLoadedCommentNumb + data.length 
+         });
       } else {
-         this.props.checkCanLoadMore(false);
+         this.props.checkCanLoadMore({
+            canLoadMore: false,
+            numb: this.props.lastLoadedCommentNumb + data.length 
+         });
       }
    }
 

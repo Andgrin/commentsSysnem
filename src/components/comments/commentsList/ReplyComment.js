@@ -1,20 +1,19 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import AddCommentForm from '../AddCommentForm';
+import SendComment from '../sendCommentForm/SendComment';
+import EditComment from '../sendCommentForm/EditComment';
+
 
 class ReplyComment extends Component {
-
-   static propTypes = {
-      onChange: PropTypes.func.isRequired
-   }
-
    render() {
       return(
          <div className="comment-reply">
             <div className="comment-reply__head">
                <span className="reply-to__author">
-                  <FontAwesomeIcon icon={['fas', 'reply']} flip="horizontal" /> {this.props.author}
+                  { (this.props.type === 'perly') ? 
+                     <spsn><FontAwesomeIcon icon={['fas', 'reply']} flip="horizontal" /> {this.props.author}</spsn> 
+                     : null 
+                  }
                </span>
 
                <button type="button" className="btn reply-btn__cancel" onClick={this.props.onChange} >
@@ -22,7 +21,11 @@ class ReplyComment extends Component {
                </button>
             </div>
 
-            <AddCommentForm parentKey={this.props.parentKey} parentId={this.props.parentId} text={this.props.text} />
+            {
+               (this.props.type === 'reply') ?
+               <SendComment /> :
+               <EditComment />
+            }
          </div>
       )
    }

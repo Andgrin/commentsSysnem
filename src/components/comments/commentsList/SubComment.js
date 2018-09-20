@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import format from 'date-fns/format';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -14,7 +13,7 @@ class SubComment extends Component {
             <div className="comment">
                <div className="user-avatar">
                   <div className="avatar-wraper">
-                     <img src={dataItem.author.avatar}  />
+                     <img src={dataItem.author.avatar} alt="" />
                   </div>
                </div>
 

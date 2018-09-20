@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import AddCommentForm from './AddCommentForm';
+import SendComment from './sendCommentForm/SendComment';
 
 
 class NewComment extends Component {
@@ -24,7 +24,7 @@ class NewComment extends Component {
                   </div>
                </div>
 
-               <AddCommentForm  />
+               <SendComment parentKey={0}  />
             </div>
          </div>
       )
