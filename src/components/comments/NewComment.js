@@ -6,36 +6,35 @@ import SendComment from './sendCommentForm/SendComment';
 
 class NewComment extends Component {
 
-   static propTypes = {
-      userAvatarSrc: PropTypes.string,
-   }
+  static propTypes = {
+    userAvatarSrc: PropTypes.string,
+  }
 
-   render() {
-      return (
-         <div id="newComment" className="new-comment">
-            <div className="new-comment__title">
-               <h1>Leave comment:</h1>
+  render() {
+    return (
+      <div id="newComment" className="new-comment">
+        <div className="new-comment__title">
+          <h1>Leave comment:</h1>
+        </div>
+
+        <div className="new-comment__body">
+          <div className="new-comment__avatar user-avatar">
+            <div className="avatar-wraper">
+              <img src={this.props.userAvatarSrc} alt="" />
             </div>
+          </div>
 
-            <div className="new-comment__body">
-               <div className="new-comment__avatar user-avatar">
-                  <div className="avatar-wraper">
-                     <img src={this.props.userAvatarSrc} alt="" />
-                  </div>
-               </div>
-
-               <SendComment parentKey={0}  />
-            </div>
-         </div>
-      )
-   }
+          <SendComment parentKey={0}  />
+        </div>
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => {
-   return {
-      userAvatarSrc: state.userAvatarSrc,
-   }
+  return {
+    userAvatarSrc: state.userAvatarSrc,
+  }
 }
-
 
 export default connect(mapStateToProps)(NewComment);

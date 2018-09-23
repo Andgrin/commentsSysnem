@@ -6,29 +6,29 @@ import Comment from './Comment';
 
 class CommentList extends Component {
 
-   static propTypes = {
-      comments: PropTypes.array
-   }
+  static propTypes = {
+    comments: PropTypes.array
+  }
 
-   render() {
-      const comments = this.props.comments;
+  render() {
+    const comments = this.props.comments;
 
-      return (
-         <ul className="comments-list">
-            {comments.map( (item, index) => {
-               return (
-                  <Comment dataItem={item} keyNumb={index} key={index} />
-               )
-            } )}
-         </ul>
-      )
-   }
+    return (
+      <ul className="comments-list">
+        {comments.map( (item, index) => {
+          return (
+            <Comment dataItem={item} keyNumb={index} key={index} />
+          )
+        } )}
+      </ul>
+    )
+  }
 }
 
 const mapStateToProps = state => {
-   return {
-      comments: state.comments
-   }
+  return {
+    comments: state.comments
+  }
 }
 
 export default connect(mapStateToProps)(CommentList);
