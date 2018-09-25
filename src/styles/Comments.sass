@@ -1,165 +1,451 @@
 
 @import './default.sass'
 
-$avatar-size-lg: 80px
-$avatar-size-sm: 60px
+$avatar-main-size-sm: 42px
+$avatar-sub-size-sm: 40px
+$avatar-main-size-md: 64px
+$avatar-sub-size-md: 44px
+$avatar-main-size-lg: 80px
+$avatar-sub-size-lg: 60px
 
 .user-avatar
-   .avatar-wraper
-      border: 2px solid #ebedee
+  .avatar-wraper
+    border: 2px solid #ebedee
+    border-radius: 4px
+    padding: 2px
+    img
       border-radius: 4px
-      padding: 2px
-      img
-         border-radius: 4px
-         display: block
+      display: block
 
 
 .comments-system
-   width: 100%
-   padding: 20px 80px
-   box-sizing: border-box
+  width: 100%
+  padding: 20px 80px
+  box-sizing: border-box
 
 .new-comment
-   .new-comment__title
-      font-size: 30px
-      color: $clr-dark
+  .new-comment__title
+    color: $clr-dark
 
-   .new-comment__body
-      display: flex
-      padding-top: 40px
-      padding-bottom: 10px
-      border-bottom: 2px solid #f2f2f2
-      .user-avatar
-         margin-right: 22px
-         img
-            width: $avatar-size-lg
-            height: $avatar-size-lg
+  .new-comment__body
+    display: flex
+    border-bottom: 2px solid #f2f2f2
+    .user-avatar
+      margin-right: 22px
 
 .comments-list
-   padding-top: 40px
-   padding-bottom: 50px
-   > .list-item
-      margin-bottom: 40px
-      &:last-child
-         margin-bottom: 0
-         .comment
-            margin-bottom: 0
-   .comment
-      display: flex
-      margin-bottom: 10px
-      .user-avatar
-         margin-right: 22px
-         img
-            width: $avatar-size-lg
-            height: $avatar-size-lg
-      .comment-body
-         width: 100%
-         padding-top: 2px
-         .comment-content
-            .comment-content__header
-               padding-bottom: 16px
-               .header-cell
-                  margin-right: 10px
-                  svg
-                     margin-right: 4px
-                     font-size: .81em
-               .comment-content__author
-                  color: $clr-dark
-                  font-size: $fs-main
-               .comment-content__publish-time, .comment-content__reply-to
-                  color: $clr-light
-                  font-size: $fs-submain
-            .comment-message
-               font-size: $fs-main
-               color: $clr-dark
-               padding-bottom: 12px
-            .comment-controls
-               .control-btn
-                  margin-right: 10px
-                  padding: 0
-                  color: $clr-light
-                  font-size: $fs-submain
-                  svg
-                     margin-right: 2px
-                     font-size: .81em
-   .comment-reply,
-   .nested-comments
-      padding-left: 110px
-   .nested-comments
-      padding-top: 20px
-      .list-item
-         padding-bottom: 30px
-         .comment
-            margin-bottom: 0
-         &:last-child
-            padding-bottom: 0
-      .user-avatar
-         img
-            width: $avatar-size-sm
-            height: $avatar-size-sm
+  > .list-item
+    &:last-child
+      margin-bottom: 0
+      .comment
+        margin-bottom: 0
+  .comment
+    display: flex
+    .comment-body
+        width: 100%
+        .comment-content
+          .comment-content__header
+            .header-cell
+            .comment-content__author
+              color: $clr-dark
+            .comment-content__publish-time, .comment-content__reply-to
+              color: $clr-light
+          .comment-message
+            color: $clr-dark
+          .comment-controls
+            .control-btn
+              padding: 0
+              color: $clr-light
 
-   .comment-reply
-      margin-top: 20px
-      .comment-reply__head
-         padding-bottom: 14px
-         display: flex
-         justify-content: space-between
-         .reply-to__author, .reply-btn__cancel
-            color: $clr-light
-            font-size: $fs-submain
-            svg
-               margin-right: 2px
-         .reply-btn__cancel
-            padding: 0
+  .comment-reply
+    .comment-reply__head
+      display: flex
+      justify-content: space-between
+      .reply-to__author, .reply-btn__cancel
+        color: $clr-light
+      .reply-btn__cancel
+        padding: 0
 
 
 
 .comment-form
-   width: 100%
-   text-align: right
-   .text-input
-      box-sizing: border-box
-      resize: none
-      width: 100%
-      outline: none
-      border: 2px solid #ebedee
-      border-radius: 4px
-      height: 88px
-      padding: 12px 14px
-      font-size: $fs-main
-      font-family: $font-main-reg
-      &:active, &:focus
-         border-color: #b6b6b6
+  width: 100%
+  text-align: right
+  .text-input
+    box-sizing: border-box
+    resize: none
+    width: 100%
+    outline: none
+    border: 2px solid #ebedee
+    border-radius: 4px
+    line-height: 1.4
+    font-family: $font-main-reg
+    &:active, &:focus
+      border-color: #b6b6b6
 
-   .new-comment-btn
-      margin-top: 8px
-      width: 140px
-      height: 44px
-      border-radius: 4px
-      background-color: #f1c40f
-      color: $clr-dark
-      font-size: $fs-main
-      font-family: $font-main-med
+  .new-comment-btn
+    border-radius: 4px
+    background-color: #f1c40f
+    color: $clr-dark
+    font-family: $font-main-med
 
 .send-comment-form,
 .edit-comment-form
-   width: 100%
+  width: 100%
 
 .load-more-comments
-   margin-top: 20px
-   border-top: 2px solid #f2f2f2
-   position: relative
-   .load-more_button-wrapper
-      position: absolute
+  margin-top: 20px
+  border-top: 2px solid #f2f2f2
+  position: relative
+  .load-more_button-wrapper
+    position: absolute
+    display: inline-block
+    background-color: #ffffff
+    .load-more__btn
+      color: $clr-light
+      border: 2px solid #f2f2f2
+
+
+
+
+
+//   --------------------------------------------
+//                   MOBILE
+//   --------------------------------------------
+@media screen and (max-width: 767px) 
+  .comments-system
+    width: 100%
+    padding: 20px 20px
+
+  .new-comment
+    .new-comment__title
+      font-size: 18px
+
+    .new-comment__body
+        padding-top: 14px
+        padding-bottom: 10px
+        .user-avatar
+          margin-right: 8px
+          img
+              width: $avatar-main-size-sm
+              height: $avatar-main-size-sm
+
+  .comments-list
+    padding-top: 40px
+    padding-bottom: 30px
+    > .list-item
+      margin-bottom: 20px
+    .comment
+      margin-bottom: 4px
+      .user-avatar
+        margin-right: 8px
+        img
+          width: $avatar-main-size-sm
+          height: $avatar-main-size-sm
+      .comment-body
+          padding-top: 2px
+          .comment-content
+            .comment-content__header
+              padding-bottom: 10px
+              min-height: $avatar-sub-size-sm + 4px
+              .header-cell
+                display: block
+                margin-bottom: 4px
+                svg
+                  margin-right: 4px
+              .comment-content__author
+                font-size: $fs-main-sm
+              .comment-content__publish-time, .comment-content__reply-to
+                font-size: $fs-submain-sm
+            .comment-message
+              font-size: $fs-main-sm
+              padding-bottom: 12px
+            .comment-controls
+              .control-btn
+                margin-right: 10px
+                font-size: $fs-submain-sm
+                svg
+                  margin-right: 2px
+                  font-size: .81em
+    .comment-reply,
+    .nested-comments
+      padding-left: 58px
+    .nested-comments
+      padding-top: 10px
+      .list-item
+        padding-bottom: 10px
+        .comment
+          margin-bottom: 0
+        &:last-child
+          padding-bottom: 0
+      .user-avatar
+        img
+          width: $avatar-sub-size-sm
+          height: $avatar-sub-size-sm
+
+    .comment-reply
+      margin-top: 10px
+      .comment-reply__head
+        padding-bottom: 8px
+        .reply-to__author, .reply-btn__cancel
+          font-size: $fs-submain-sm
+          svg
+            margin-right: 2px
+        .reply-btn__cancel
+
+  .comment-form
+    .text-input
+      height: 50px
+      padding: 8px 12px
+      font-size: $fs-main-sm
+
+    .new-comment-btn
+      margin-top: 8px
+      width: 100%
+      height: 28px
+      font-size: $fs-main-sm
+
+  .send-comment-form,
+  .edit-comment-form
+    width: 100%
+
+  .load-more-comments
+    margin-top: 20px
+    .load-more_button-wrapper
+      top: -19px
+      left: 50%
+      transform: translate(-50%, 0)
+      padding: 0 4px
+      .load-more__btn
+        width: 140px
+        height: 34px
+        font-size: $fs-submain-sm
+
+
+
+
+
+//   --------------------------------------------
+//                   TABLET
+//   --------------------------------------------
+@media screen and (min-width: 768px) and (max-width: 991px)
+  .comments-system
+    width: 100%
+    padding: 20px 60px
+
+  .new-comment
+    .new-comment__title
+      font-size: 24px
+
+    .new-comment__body
+        padding-top: 40px
+        padding-bottom: 10px
+        .user-avatar
+          margin-right: 22px
+          img
+              width: $avatar-main-size-md
+              height: $avatar-main-size-md
+
+  .comments-list
+    padding-top: 40px
+    padding-bottom: 50px
+    > .list-item
+      margin-bottom: 40px
+    .comment
+      margin-bottom: 10px
+      .user-avatar
+        margin-right: 22px
+        img
+          width: $avatar-main-size-md
+          height: $avatar-main-size-md
+      .comment-body
+          padding-top: 2px
+          .comment-content
+            .comment-content__header
+              padding-bottom: 16px
+              .header-cell
+                margin-right: 10px
+                svg
+                  margin-right: 4px
+                  font-size: .81em
+              .comment-content__author
+                font-size: $fs-main-lg
+              .comment-content__publish-time, .comment-content__reply-to
+                font-size: $fs-submain-md
+            .comment-message
+              font-size: $fs-main-md
+              padding-bottom: 12px
+            .comment-controls
+              .control-btn
+                margin-right: 10px
+                font-size: $fs-submain-md
+                svg
+                  margin-right: 2px
+                  font-size: .81em
+    .comment-reply,
+    .nested-comments
+      padding-left: 110px
+    .nested-comments
+      padding-top: 20px
+      .list-item
+        padding-bottom: 30px
+        .comment
+          margin-bottom: 0
+        &:last-child
+          padding-bottom: 0
+      .user-avatar
+        img
+          width: $avatar-sub-size-md
+          height: $avatar-sub-size-md
+
+    .comment-reply
+      margin-top: 20px
+      .comment-reply__head
+        padding-bottom: 14px
+        .reply-to__author, .reply-btn__cancel
+          font-size: $fs-submain-md
+          svg
+            margin-right: 2px
+        .reply-btn__cancel
+
+  .comment-form
+    .text-input
+      height: 88px
+      padding: 12px 14px
+      font-size: $fs-main-md
+
+    .new-comment-btn
+      margin-top: 8px
+      width: 120px
+      height: 38px
+      font-size: $fs-main-md
+
+  .send-comment-form,
+  .edit-comment-form
+    width: 100%
+
+  .load-more-comments
+    margin-top: 20px
+    .load-more_button-wrapper
       top: -22px
       left: 50%
       transform: translate(-50%, 0)
-      display: inline-block
       padding: 0 4px
-      background-color: #ffffff
       .load-more__btn
-         width: 180px
-         height: 40px
-         color: $clr-light
-         font-size: $fs-submain
-         border: 2px solid #f2f2f2
+        width: 180px
+        height: 40px
+        font-size: $fs-submain-md
+
+
+
+
+//   --------------------------------------------
+//                   DESKTOP
+//   --------------------------------------------
+@media screen and (min-width: 992px)
+  .comments-system
+    width: 100%
+    padding: 20px 80px
+
+  .new-comment
+    .new-comment__title
+      font-size: 30px
+
+    .new-comment__body
+        padding-top: 40px
+        padding-bottom: 10px
+        .user-avatar
+          margin-right: 22px
+          img
+              width: $avatar-main-size-lg
+              height: $avatar-main-size-lg
+
+  .comments-list
+    padding-top: 40px
+    padding-bottom: 50px
+    > .list-item
+      margin-bottom: 40px
+    .comment
+      margin-bottom: 10px
+      .user-avatar
+        margin-right: 22px
+        img
+          width: $avatar-main-size-lg
+          height: $avatar-main-size-lg
+      .comment-body
+          padding-top: 2px
+          .comment-content
+            .comment-content__header
+              padding-bottom: 16px
+              .header-cell
+                margin-right: 10px
+                svg
+                  margin-right: 4px
+                  font-size: .81em
+              .comment-content__author
+                font-size: $fs-main-lg
+              .comment-content__publish-time, .comment-content__reply-to
+                font-size: $fs-submain-lg
+            .comment-message
+              font-size: $fs-main-lg
+              padding-bottom: 12px
+            .comment-controls
+              .control-btn
+                margin-right: 10px
+                font-size: $fs-submain-lg
+                svg
+                  margin-right: 2px
+                  font-size: .81em
+    .comment-reply,
+    .nested-comments
+      padding-left: 110px
+    .nested-comments
+      padding-top: 20px
+      .list-item
+        padding-bottom: 30px
+        .comment
+          margin-bottom: 0
+        &:last-child
+          padding-bottom: 0
+      .user-avatar
+        img
+          width: $avatar-sub-size-lg
+          height: $avatar-sub-size-lg
+
+    .comment-reply
+      margin-top: 20px
+      .comment-reply__head
+        padding-bottom: 14px
+        .reply-to__author, .reply-btn__cancel
+          font-size: $fs-submain-lg
+          svg
+            margin-right: 2px
+        .reply-btn__cancel
+
+  .comment-form
+    .text-input
+      height: 88px
+      padding: 12px 14px
+      font-size: $fs-main-lg
+
+    .new-comment-btn
+      margin-top: 8px
+      width: 140px
+      height: 44px
+      font-size: $fs-main-lg
+
+  .send-comment-form,
+  .edit-comment-form
+    width: 100%
+
+  .load-more-comments
+    margin-top: 20px
+    .load-more_button-wrapper
+      top: -22px
+      left: 50%
+      transform: translate(-50%, 0)
+      padding: 0 4px
+      .load-more__btn
+        width: 180px
+        height: 40px
+        font-size: $fs-submain-lg

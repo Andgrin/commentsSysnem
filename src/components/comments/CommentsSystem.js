@@ -5,15 +5,13 @@ import NewComment from './NewComment';
 import CommentsList from './commentsList/CommentsList';
 import LoadMoreComments from './LoadMoreComments'
 import { getCommentsList, checkCanLoadMore } from '../../actions/index';
-// import axios from 'axios';
 import '../../styles/Comments.css'
-
 import callFatch from '../../api/ajaxRequests';
+
 
 class CommentsSystem extends Component {
   constructor(props) {
-    super(props);
-    
+    super(props)
     // This binding is necessary to make `this` work in the callback
     this.handleClick = this.handleClick.bind(this);
   }
@@ -37,10 +35,7 @@ class CommentsSystem extends Component {
     }
 
     callFatch('loadComments', {
-      data: {
-        count: 5,
-        offset: offset
-      },
+      url: `?offset=${offset}&count=5`,
       callback: successFunc
     })
   }
@@ -48,13 +43,11 @@ class CommentsSystem extends Component {
   checkCanLoadMore(data) {
     if ( data ) {
       if ( data.length !== 0 && data.length % 5 === 0 ) {
-        console.log('checkCanLoadMore true', data.length, this.props.lastLoadedCommentNumb);
         this.props.checkCanLoadMore({
           canLoadMore: true,
           numb: this.props.lastLoadedCommentNumb + data.length 
         });
       } else {
-        console.log('checkCanLoadMore else', data.length, this.props.lastLoadedCommentNumb);
         this.props.checkCanLoadMore({
           canLoadMore: false,
           numb: this.props.lastLoadedCommentNumb + data.length 

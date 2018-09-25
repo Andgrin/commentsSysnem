@@ -19,7 +19,7 @@ class CommentList extends Component {
           return (
             <Comment dataItem={item} keyNumb={index} key={index} />
           )
-        } )}
+        })}
       </ul>
     )
   }

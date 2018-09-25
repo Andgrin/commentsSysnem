@@ -2,73 +2,243 @@
 @import './default.sass'
 
 .page-article 
-   width: 100%
-   height: auto
-   // font-family: $font-main-reg
+  width: 100%
+  height: auto
+  // font-family: $font-main-reg
 
 .article-header
-   width: 100%
-   padding: 40px 80px 0
-   box-sizing: border-box
-   .article-title
-      width: 100%
+  width: 100%
+  padding: 40px 80px 0
+  box-sizing: border-box
+  .article-title
+    width: 100%
+    // position: relative
+    box-sizing: border-box
+    border-bottom: 1px solid #f2f2f2
+    .svg-icon
+      position: absolute
+      // top: 2px
+      // left: -56px
+      // width: 24px
+      // height: 24px
+      // border: 4px solid #ffd800
+      border-radius: 50%
+      // font-size: 16px
+      // line-height: 24px
+      color: #ffd800
+      text-align: center
+    
+    h1
       position: relative
-      box-sizing: border-box
-      .svg-icon
-         position: absolute
-         top: 2px
-         left: -56px
-         width: 24px
-         height: 24px
-         border: 4px solid #ffd800
-         border-radius: 50%
-         font-size: 16px
-         line-height: 24px
-         color: #ffd800
-         text-align: center
+      // font-size: 30px
+      font-family: $font-main-sbold
+      // line-height: 38px
+      color: $clr-dark
       
-      h1
-         font-size: 30px
-         font-family: $font-main-sbold
-         line-height: 38px
-         color: $clr-dark
-         border-bottom: 1px solid #f2f2f2
 
-   .article-subtitle
-      color: #b6b6b6
-      font-size: 15px
-      padding-top: 9px
+  .article-subtitle
+    color: #b6b6b6
+    // font-size: 15px
+    // padding-top: 9px
 
 .article-body
-   padding: 12px 80px 10px
-   p
-      font-size: $fs-main
+  // padding: 12px 80px 10px
+  p
+    // font-size: $fs-main
+    // line-height: 25px
+    // padding-bottom: 25px
+    text-align: justify
+
+  // img
+  //   float: left
+  //   width: 366px
+  //   margin-left: -85px
+  //   margin-right: 20px
+  //   border: 5px solid #f2f2f2
+
+.article-footer
+  border-top: 2px solid #f2f2f2
+  border-bottom: 2px solid #f2f2f2
+  // padding: 20px 2px
+  // display: flex
+  color: $clr-light
+  .article-footer__info-item
+    // font-size: 15px
+    // margin-right: 56px
+    span
+      white-space: nowrap
+      > svg
+        padding-right: 5px
+        font-size: .81em
+      // > address
+      //   display: inline
+
+
+//   --------------------------------------------
+//                   MOBILE
+//   --------------------------------------------
+@media screen and (max-width: 767px) 
+
+  .article-header
+    width: 100%
+    padding: 16px 20px 0
+    .article-title
+      width: 100%
+      .svg-icon
+        top: 2px
+        left: 0
+        width: 14px
+        height: 14px
+        border: 2px solid #ffd800
+        font-size: 10px
+        line-height: 16px
+      
+      h1
+        padding-left: 24px
+        font-size: 18px
+        line-height: 1.4
+
+    .article-subtitle
+        font-size: $fs-submain-sm
+        padding-top: 9px
+
+  .article-body
+    padding: 10px 20px 10px
+    p
+      font-size: $fs-main-sm
+      line-height: 1.4
+      padding-bottom: 14px
+
+    img
+      width: 100%
+      margin-left: -5px
+      margin-bottom: 14px
+      border: 5px solid #f2f2f2
+
+  .article-footer
+    padding: 6px 2px
+    // display: flex
+    .article-footer__info-item
+      font-size: $fs-submain-sm
+      padding: 4px 0
+      span
+        > svg
+          padding-right: 5px
+          font-size: .81em
+        > address
+          display: inline
+
+
+
+
+
+//   --------------------------------------------
+//                   TABLET
+//   --------------------------------------------
+@media screen and (min-width: 768px) and (max-width: 991px)
+
+  .article-header
+    width: 100%
+    padding: 24px 60px 0
+    .article-title
+      width: 100%
+      .svg-icon
+        top: 2px
+        left: -44px
+        width: 22px
+        height: 22px
+        border: 3px solid #ffd800
+        font-size: 13px
+        line-height: 22px
+      
+      h1
+        font-size: 26px
+        line-height: 34px
+
+    .article-subtitle
+        font-size: $fs-submain-md
+        padding-top: 9px
+
+  .article-body
+    padding: 12px 60px 10px
+    p
+      font-size: $fs-main-md
+      line-height: 1.4
+      padding-bottom: 20px
+
+    img
+      float: left
+      width: 320px
+      margin-left: -65px
+      margin-right: 20px
+      border: 5px solid #f2f2f2
+
+  .article-footer
+    padding: 20px 2px
+    display: flex
+    .article-footer__info-item
+      font-size: $fs-submain-md
+      margin-right: 56px
+      span
+        > svg
+          padding-right: 5px
+          font-size: .81em
+        > address
+          display: inline
+
+
+
+
+
+//   --------------------------------------------
+//                   DESKTOP
+//   --------------------------------------------
+@media screen and (min-width: 992px)
+  .article-header
+    width: 100%
+    padding: 40px 80px 0
+    .article-title
+      width: 100%
+      .svg-icon
+        top: 2px
+        left: -56px
+        width: 24px
+        height: 24px
+        border: 4px solid #ffd800
+        font-size: 16px
+        line-height: 24px
+      
+      h1
+        font-size: 30px
+        line-height: 38px
+
+    .article-subtitle
+        font-size: $fs-submain-lg
+        padding-top: 9px
+
+  .article-body
+    padding: 12px 80px 10px
+    p
+      font-size: $fs-main-lg
       line-height: 25px
       padding-bottom: 25px
-      text-align: justify
 
-   img
+    img
       float: left
       width: 366px
       margin-left: -85px
       margin-right: 20px
       border: 5px solid #f2f2f2
 
-.article-footer
-   border-top: 2px solid #f2f2f2
-   border-bottom: 2px solid #f2f2f2
-   padding: 20px 2px
-   display: flex
-   color: $clr-light
-   .article-footer__info-item
-      font-size: 15px
+  .article-footer
+    padding: 20px 2px
+    display: flex
+    .article-footer__info-item
+      font-size: $fs-submain-lg
       margin-right: 56px
       span
-         white-space: nowrap
-         > svg
-            padding-right: 5px
-            font-size: .81em
-         > address
-            display: inline
-
-
+        > svg
+          padding-right: 5px
+          font-size: .81em
+        > address
+          display: inline

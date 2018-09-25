@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import { deleteComment, triggerCommentForm } from '../../../actions';
-// import axios from 'axios';
 import format from 'date-fns/format';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ReplyComment from './ReplyComment';
@@ -42,19 +41,6 @@ class Comment extends Component {
     const callbackFunc = data => {
       this.props.deleteComment(this.props.keyNumb)
     };
-    // axios({
-    //   method: 'DELETE',
-    //   url: 'http://frontend-test.pingbull.com/pages/' + this.props.userEmail + '/comments/' + this.props.dataItem.id,
-    //   data: {
-    //     _method: 'DELETE'
-    //   }
-    // })
-    //   .then( response => {
-    //     this.props.deleteComment(this.props.keyNumb)
-    //   })
-    //   .catch(function (error) {
-    //     console.log("AXIOS Error :-S", error);
-    //   });
 
     callFatch('deleteComments', {
       data: {

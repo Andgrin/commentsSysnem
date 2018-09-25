@@ -22,12 +22,8 @@ export default function Comment (state = initialState, action) {
     case CommentsActionType.GET_COMMENTS_LIST: {
       return {
         ...state,
-        comments: [...state.comments.concat( action.comments )]
-        
+        comments: [...state.comments.concat( action.comments )] 
       }
-      // return update(state, { 
-      //     comments: {$add: [action.comments]}
-      // })
     }
 
     case CommentsActionType.ADD_NEW_COMMENT: {
